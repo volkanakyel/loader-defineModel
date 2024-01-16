@@ -38,11 +38,23 @@ onUnmounted(() => {
       <span>{{ loadingValue }}% </span>
       <span>Done</span>
     </div>
+    <div class="duration-input">
+      <input
+        type="number"
+        id="duration"
+        name="duration"
+        min="1"
+        max="60"
+        step="1"
+        value="10"
+      />
+      <label for="duration">Duration (seconds)</label>
+    </div>
     <div class="section-ctas">
-      <button class="button-stop" @click="startLoading(5000)">
+      <button class="button-start" @click="startLoading(5000)">
         Relaunch (5s)
       </button>
-      <button class="button-stop" @click="startLoading(10000)">
+      <button class="button-start" @click="startLoading(10000)">
         Relaunch (10s)
       </button>
       <button class="button-stop" @click="resetLoading">Reset</button>
@@ -73,25 +85,5 @@ onUnmounted(() => {
 
 .loader-status {
   margin-top: 16px;
-}
-
-.section-ctas {
-  margin-top: 12px;
-  display: flex;
-  gap: 12px;
-}
-
-.button-stop {
-  border: none;
-  padding: 12px;
-  border-radius: 6px;
-  background-color: #46ba87;
-  color: #fff;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.button-stop:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
 }
 </style>
