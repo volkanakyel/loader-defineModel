@@ -78,8 +78,4 @@ onUnmounted(() => {
 .loader-status {
   margin-top: 16px;
 }
-
-.section-ctas {
-  margin-top: 12px;
-}
 </style>
