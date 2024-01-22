@@ -4,7 +4,7 @@ import LoaderModel from "./components/LoaderModel.vue";
 import { ref } from "vue";
 
 const isLoading = ref(false);
-const durationValue = ref(5000);
+const durationValue = ref(5);
 </script>
 
 <template>
@@ -29,7 +29,8 @@ const durationValue = ref(5000);
             min="1"
             max="60"
             step="1"
-            value="10"
+            value="durationValue"
+            v-model="durationValue"
           />
           <label for="duration">Duration (seconds)</label>
         </div>
@@ -37,9 +38,7 @@ const durationValue = ref(5000);
           <button class="button-start" @click="isLoading = true">
             Start Loading
           </button>
-          <button class="button-stop" @click="isLoading = false">
-            Stop Loading
-          </button>
+          <button class="button-stop" @click="isLoading = false">Reset</button>
         </div>
       </div>
     </div>

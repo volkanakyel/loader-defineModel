@@ -13,16 +13,14 @@ const startLoading = () => {
   clearInterval(intervalId);
   loadingValue.value = 0;
 
-  setTimeout(() => {
-    const intervalDuration = duration.value / 100;
-    intervalId = setInterval(() => {
-      if (loadingValue.value < 100) {
-        loadingValue.value += 5;
-      } else {
-        clearInterval(intervalId);
-      }
-    }, intervalDuration);
-  }, 500);
+  const intervalDuration = duration.value * 10;
+  intervalId = setInterval(() => {
+    if (loadingValue.value < 100) {
+      loadingValue.value += 5;
+    } else {
+      clearInterval(intervalId);
+    }
+  }, intervalDuration);
 };
 
 watch(

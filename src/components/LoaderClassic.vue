@@ -3,20 +3,19 @@ import { ref, onUnmounted } from "vue";
 let loadingValue = ref(0);
 let intervalId = null;
 
-const startLoading = (duration = 5000) => {
-  clearInterval(intervalId);
-  loadingValue.value = 0;
+const loadingDuration = ref(5);
 
-  setTimeout(() => {
-    const intervalDuration = duration / 100;
-    intervalId = setInterval(() => {
-      if (loadingValue.value < 100) {
-        loadingValue.value += 5;
-      } else {
-        clearInterval(intervalId);
-      }
-    }, intervalDuration);
-  }, 500);
+const startLoading = () => {
+  clearInterval(intervalId);
+
+  const intervalDuration = loadingDuration.value * 10;
+  intervalId = setInterval(() => {
+    if (loadingValue.value < 100) {
+      loadingValue.value += 5;
+    } else {
+      clearInterval(intervalId);
+    }
+  }, intervalDuration);
 };
 
 const resetLoading = () => {
@@ -46,16 +45,14 @@ onUnmounted(() => {
         min="1"
         max="60"
         step="1"
-        value="10"
+        value="loadingDuration"
+        v-model="loadingDuration"
       />
       <label for="duration">Duration (seconds)</label>
     </div>
     <div class="section-ctas">
-      <button class="button-start" @click="startLoading(5000)">
-        Relaunch (5s)
-      </button>
-      <button class="button-start" @click="startLoading(10000)">
-        Relaunch (10s)
+      <button class="button-start" @click="startLoading()">
+        Start Loading
       </button>
       <button class="button-stop" @click="resetLoading">Reset</button>
     </div>
