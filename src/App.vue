@@ -9,6 +9,7 @@ const durationValue = ref(5000);
 
 <template>
   <div class="app-container">
+    <h2>Props & defineModel</h2>
     <div class="loader-section">
       <div>
         <p class="loader-title">❌ Without define Model</p>
@@ -49,12 +50,13 @@ const durationValue = ref(5000);
 .app-container {
   max-width: 970px;
   margin: 52px auto;
+  padding: 16px;
 }
 .loader-section {
   display: flex;
   flex-wrap: wrap;
   gap: 56px;
-  padding: 24px;
+  margin-top: 24px;
 }
 
 .loader-title {
