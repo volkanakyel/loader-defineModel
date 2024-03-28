@@ -6,6 +6,7 @@
   <nav>
     <RouterLink to="/">Go to Home</RouterLink>
     <RouterLink to="/defineModel">DefineModel test</RouterLink>
+    <RouterLink to="/skeletonLoading">Skeleton loading</RouterLink>
   </nav>
   <main>
     <RouterView />
