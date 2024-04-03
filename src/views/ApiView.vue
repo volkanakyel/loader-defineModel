@@ -9,4 +9,5 @@ export default {
 </script>
 
 <template>
+  <h2>Api route</h2>
 </template>
