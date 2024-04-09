@@ -38,6 +38,9 @@ watch(movieInput, () => {
       <input type="text" placeholder="Search your movie" v-model="movieInput" />
       <i v-if="isLoading" class="loader"></i>
     </div>
+    <ul>
+      <li v-for="movie in movieList" :key="movie.id">{{ movie.Title }}</li>
+    </ul>
     <div style=" margin-top: 34px;">
       <FormatNumber text="Hello World" value="500" />
     </div>

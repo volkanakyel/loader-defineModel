@@ -9,7 +9,8 @@
     <RouterLink to="/">Go to Home</RouterLink>
     <RouterLink to="/defineModel">DefineModel test</RouterLink>
     <RouterLink to="/skeletonLoading">Skeleton loading</RouterLink>
-    <RouterLink to="/Api">Input debounce</RouterLink>
+    <RouterLink to="/api">Input debounce</RouterLink>
+    <RouterLink to="/puzzle">Puzzle</RouterLink>
   </nav>
   <main>
     <RouterView />
