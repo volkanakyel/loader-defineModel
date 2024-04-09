@@ -2,6 +2,8 @@
 import { debounce } from "lodash";
 import { ref, watch } from "vue"
 
+import FormatNumber from '@/components/FormatNumber.vue';
+
 const movieInput = ref('');
 const isLoading = ref(false);
 const movieList = ref(null);
@@ -36,9 +38,12 @@ watch(movieInput, () => {
       <input type="text" placeholder="Search your movie" v-model="movieInput" />
       <i v-if="isLoading" class="loader"></i>
     </div>
-    <ul v-for="movie in movieList" :key="movie.id">
-      <li>{{ movie.Title }}</li>
-    </ul>
+    <div style=" margin-top: 34px;">
+      <FormatNumber text="Hello World" value="500" />
+    </div>
+    <div style=" margin-top: 34px;">
+      <FormatNumber text="Hello World" value="56500" :config="{ maxTextLength: 8 }" />
+    </div>
   </div>
 </template>
 
